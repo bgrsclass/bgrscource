@@ -1,0 +1,119 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e9f5e9; /* Soft green background color for contrast */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Signup Container */
+.signup-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+
+    height: 100vh;
+    background: linear-gradient(135deg, 
+        #4caf50,    /* Green */
+        #1e88e5,    /* Blue */
+        #66bb6a,    /* Light Green */
+        #42a5f5,    /* Light Blue */
+        #1de9b6,    /* Turquoise */
+        #00bcd4,    /* Cyan */
+        #009688,    /* Teal */
+        #1976d2,    /* Dark Blue */
+        #5c6bc0,    /* Indigo */
+        #7e57c2,    /* Purple */
+        #ab47bc,    /* Lavender */
+        #ba68c8,    /* Light Purple */
+        #f06292,    /* Pink */
+        #ef5350,    /* Red */
+        #e57373,    /* Light Red */
+        #f44336,    /* Bright Red */
+        #ff7043,    /* Orange */
+        #ffb74d,    /* Light Orange */
+        #ffcc80,    /* Pale Orange */
+        #ffe082     /* Light Yellow */
+    ); /* Bluish and greenish gradient with 20 colors */
+    background-size: 300% 300%; /* Increase size for smooth animation */
+    animation: moving-colors 10s ease infinite; /* Smooth color transition */
+    padding: 20px; /* Padding for spacing */
+}
+
+
+/* Signup Form */
+.signup-form {
+    background: white;
+    padding: 5px; /* Added more padding for a spacious feel */
+    border-radius: 10px; /* Slightly less rounded for a professional look */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Softer shadow for elevation */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 300px; /* Maximum width for larger screens */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow on hover */
+}
+
+/* Transform effect on hover */
+.signup-form:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Slightly increased margin */
+    color: #4caf50; /* Darker green for prominence */
+    font-weight: 600; /* Bolder font for prominence */
+    font-size: 1.8rem; /* Increased font size for visibility */
+}
+
+/* Alert Messages */
+.alert {
+    margin-bottom: 20px; /* Increased margin for spacing */
+    color: #d9534f; /* Bootstrap danger color */
+    text-align: center; /* Center the alert message */
+}
+
+/* Input Fields */
+.form-control {
+    border: 1px solid #4caf50; /* Green border for inputs */
+    border-radius: 8px; /* More rounded edges for input fields */
+    padding: 14px; /* Increased padding for touch targets */
+    font-size: 1rem; /* Standard font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.form-control:focus {
+    border-color: #81c784; /* Highlighted border on focus */
+    box-shadow: 0 0 8px rgba(129, 198, 132, 0.5); /* Subtle glow effect */
+    outline: none; /* Remove outline on focus */
+}
+
+/* Buttons */
+
+
+/* Terms and Conditions */
+.terms {
+    text-align: center;
+    margin-top: 15px; /* Increased margin for spacing */
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #666; /* Subtle text color */
+}
+
+/* Paragraphs */
+p {
+    text-align: center;
+    margin: 0; /* Remove default margin */
+}
+
+/* Keyframes for Moving Colors Animation */
+@keyframes moving-colors {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Midpoint for smooth transition */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}

@@ -1,0 +1,55 @@
+.cource-section {
+    background-color: #f0f8ff; /* Light background color for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding around the content */
+    margin: 20px 0; /* Vertical margin between sections */
+}
+
+.cource-section h1 {
+    font-size: 28px; /* Larger font size for the title */
+    color: #1b8529; /* Primary color for headings */
+    margin-bottom: 10px; /* Space below the heading */
+    text-align: center; /* Center the title */
+}
+
+.cource-section p {
+    font-size: 16px; /* Font size for the paragraph */
+    color: #555; /* Dark grey text for better readability */
+    line-height: 1.6; /* Increased line height for readability */
+    text-align: center; /* Center align the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.cource-section ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center align the list */
+    gap: 20px; /* Space between the list items */
+}
+
+.cource-section li {
+    background-color: #ffffff; /* White background for list items */
+    border: 2px solid #1b8529; /* Border with primary color */
+    border-radius: 5px; /* Rounded corners for list items */
+    padding: 10px 15px; /* Padding inside the list items */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Change cursor to crosshair when hovering */
+}
+
+.cource-section li:hover {
+    background-color: #e0f7e0; /* Light green background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.cource-link {
+    text-decoration: none; /* Remove underline from links */
+    color: #1b8529; /* Primary color for links */
+    font-weight: bold; /* Bold text for links */
+}
+
+/* Hover effect for links */
+.cource-link:hover {
+    color: #0056b3; /* Darker color on hover */
+}

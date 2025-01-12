@@ -1,0 +1,43 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflowing slides */
+}
+
+.slider {
+    display: flex; /* Align slides in a row */
+    transition: transform 0.5s ease; /* Smooth transition for slide movement */
+}
+
+.slide-item {
+    min-width: 100%; /* Each slide takes the full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 20px;
+    text-align: center;
+}
+
+.video-frame {
+    margin: 20px 0; /* Space between video frames */
+}
+
+.slider-arrows {
+    position: absolute;
+    top: 50%; /* Center the arrows vertically */
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-arrow, .right-arrow {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
