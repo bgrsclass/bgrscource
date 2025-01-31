@@ -1,23 +1,21 @@
-// server.js
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
-require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoUrlAtlas = process.env.MONGODB_URI; // Ensure this is set in your .env file
+const mongoUrlAtlas = "mongodb+srv://bgrs:GaNhUz0gLwQsznBt@signup.x1mdm.mongodb.net/"; // Directly embedded MongoDB URI
 const dbName = 'signup';
 let mongoDb;
 
 // Connection options
 const options = {
-    serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
-    tls: true,                       // Enable TLS
-    tlsAllowInvalidCertificates: true, // Allow invalid certificates (for testing only)
-    tlsAllowInvalidHostnames: true, // Allow invalid hostnames (for testing only)
+    serverSelectionTimeoutMS: 5000,
+    tls: true,
+    tlsAllowInvalidCertificates: true,
+    tlsAllowInvalidHostnames: true,
 };
 
 // Function to connect to MongoDB
@@ -44,7 +42,7 @@ app.post('/signup', async (req, res) => {
             return res.status(500).json({ message: 'Database not connected' });
         }
         
-        const existingUser = await mongoDb.collection('login').findOne({ $or:[{email },{username}] });
+        const existingUser = await mongoDb.collection('login').findOne({ $or: [{ email }, { username }] });
         if (existingUser) {
             return res.status(400).json({ message: 'Email or Username already registered' });
         }
@@ -56,9 +54,6 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-
-
-// MongoDB login endpoint
 // MongoDB login endpoint
 app.post('/login', async (req, res) => {
     const { identifier, password } = req.body;
@@ -68,7 +63,6 @@ app.post('/login', async (req, res) => {
             return res.status(500).json({ message: 'Database not connected' });
         }
 
-        // Check if the identifier is an email or username
         const user = await mongoDb.collection('login').findOne({
             $or: [
                 { email: identifier }, 
@@ -76,13 +70,7 @@ app.post('/login', async (req, res) => {
             ]
         });
         
-        if (!user) {
-            return res.status(401).json({ message: 'Invalid email/username or password' });
-        }
-
-        // Here, you should ideally use bcrypt to compare hashed passwords
-        const isMatch = (password === user.password); // Replace with proper password comparison
-        if (!isMatch) {
+        if (!user || password !== user.password) {
             return res.status(401).json({ message: 'Invalid email/username or password' });
         }
 
